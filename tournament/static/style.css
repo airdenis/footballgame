@@ -1,0 +1,131 @@
+.ban{
+	background: linear-gradient(#58D68D,#228B22) ;
+	color: #196F3D ;
+	padding: 10px;
+	text-shadow: 2px 2px #58D68D;
+}
+.logo{
+	text-align: right;
+}
+.mainly{
+    background-color: #C1E1A6;
+	background-image: url(images/football.svg);
+	background-image-width: 300px;
+  	background-repeat: repeat;
+    padding: 0px;
+}
+hr {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	height: 2px;
+	background-color:#228B22;
+	color:#228B22;
+}
+h3,h6{
+	padding-left: 2.5%;
+}
+h5{
+	font-size: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    h3 {
+        font-size:18px;
+    }
+    h4 {
+        font-size:16px;
+    }
+    h5 {
+        font-size:14px;
+    }
+    .wall{
+    	padding: 2%;
+    }
+    input{
+    	width: 100px;
+    }
+    .logo{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
+    h3 {
+        font-size:20px;
+    }
+    h4 {
+        font-size:18px;
+    }
+    h5 {
+        font-size:16px;
+    }
+    p{
+    	font-size: 10px;
+    }
+    input{
+    	width: 150px;
+    }
+}
+.col-md-6, .col-md-3{
+	padding: 5px;
+    padding-right: 2%;
+    padding-left: 2%;
+	
+}
+button, input{
+	width: 100%; 
+}
+.id{
+	width: 50px;
+}
+.wall{
+	opacity: 0.85;
+}
+p{
+	font-family: cursive;
+	font-style: italic;
+	font-size: 10px;
+	color: #196F3D ;
+}
+form{
+	color: #196F3D ;
+	text-shadow: 2px 2px #DCDCDC;
+}
+.sub{
+	margin-bottom: 5px;
+}
+.sub1{
+    margin-bottom: 20px;
+}
+.dropdown-toggle{
+	margin-bottom: 5px;
+}
+.flag{
+    border: 1px;
+    border-color: black;
+}
+.row{
+    margin: 0px;
+}
+.table{
+    margin-bottom: 10px;
+    font-size: 0.75rem;
+}
+.mytable>tbody>tr>td, .mytable>tbody>tr>th, .mytable>tfoot>tr>td, .mytable>tfoot>tr>th, .mytable>thead>tr>td, .mytable>thead>tr>th {
+    padding: 5px;
+    text-align: center;
+}
+.container{
+    padding: 0px;
+}
+.game{
+    background-color: #c7d8c6;
+}
+.dropdown-menu{
+    box-shadow: none;
+}
+#uplib{
+    background-color: #7E8F7C;
+    border: 0px;
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>UEFA CAMPIONSHIP</title>
+    <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='icon.ico')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <div class='mainly container'>
+      <div class='row ban'>
+        <div class='col-md-11 col-sm-9 col-xs-8'>
+          <img src="{{ url_for('static', filename='images/title.svg') }}" height="60" class='responsive'>
+        </div>
+        <div class='col-md-1 col-sm-3 col-xs-4 header'>
+          <img src="{{ url_for('static', filename='images/logo.png') }}" height="60" class='logo responsive'>
+        </div>  
+      </div>
+      <hr>
+      <div class='container'>
+        <div class='row'>
+          <div class='col-md-6'>
+            <div class='row'>
+              <h3>INSERT COUNTRY</h3>
+            </div>
+            <form method=post action = "http://localhost:8000/">
+              <div class='row'>
+                <div class='col-md-6'>
+                  <input id="ids" name="ids" class="in form-control" value='{{ids}}'></input>
+                </div>
+                <div class='col-md-6'>
+                  <button id="go" type="button" class='btn btn-success id'>ID</button>
+                </div>
+              </div>
+              <div class='row'>
+                <div class='col-md-6'>
+                  <input id="name" name="name" class="in form-control" value='{{name}}'></input>
+                </div>
+                <div class='col-md-6'>
+                  <h5>Country Name</h5>
+                </div>
+              </div>
+              <div class='row'> 
+                <div class='col-md-6'>
+                  <input id="url" name="url" class="in form-control form-xs" value='{{url}}'></input>
+                </div>
+                <div class='col-md-6'>
+                  <h5>Flag URL</h5>
+                </div>
+              </div>
+              <div class='row'>
+                <div class='col-md-6'>
+                  <input id="chance" name="chance" class="in form-control form-xs" value='{{chance}}'></input>
+                </div>
+                <div class='col-md-6'>
+                  <h5>Chance of Succes in (%)</h5>
+                </div>
+              </div>
+              <div class='row'>
+                <div class='col-md-6'>
+                  <div class="dropdown">
+                    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Countries Library
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    </div>
+                  </div>
+                </div>
+                <div class='col-md-6'>
+                  <h5>Choose a country from library</h5>
+                </div>
+              </div>
+              <div class='row'>
+                <div class='col-md-6 sub'>
+                  <button id="go" type="submit" class='btn btn-primary btn-xs'>Add to Library</button>
+                </div>
+              </div>
+            </form>
+           </div>
+          <div class='col-md-6' class='img-thumbnail'>
+            <img src="{{ url_for('static', filename='images/wall.JPG') }}" class='wall img-responsive img-thumbnail'>
+            <div class="caption" id="caption">
+              <p>THE BEST SOCCER PLAYERS EVER!</p>
+            </div>
+          </div>
+        </div>
+            <form method=post id="process" action = "http://localhost:8000/process" class='container'>
+              <div class='col-md-6' id="gamebox">
+                <div class='col-md-6'>
+                  <button id="post_contry" type="button" class='btn btn-primary btn-xs addplayer'>Add to Game</button>
+                  <div id="rivalsNrMsg" style="font-size:0.65rem;text-align:center;">
+                    <em>Only 8 rivals can be included into championship!</em>
+                  </div>
+                </div>
+              </div>
+              <div class='row' id="content">
+      
+              </div>
+           
+      </div>
+
+  
+  </body>
+    <script src="{{ url_for('static', filename='js/helper.js')}}"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+</html>
