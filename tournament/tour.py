@@ -54,7 +54,7 @@ def post():
       update_post('url', url,'name', name)
       update_post('chance', chance, 'name', name)
 
-  except:   
+  except:
     name = "insert country name"
     url = "insert country url"
     chance = "insert country chance to win"
@@ -84,19 +84,21 @@ def json_convertorPost():
     list.append({"id" : e[0], "name" : e[1], "url" : e[2], "chance" : e[3]})
   return jsonify(list)
 
-languages = [{'name' : 'javascript'},{'name' : 'python'}]
-@app.route('/test', methods=['GET'])  
+
+languages = [{'name': 'javascript'}, {'name': 'python'}]
+
+
+@app.route('/test', methods=['GET'])
 def returnAll():
-  return jsonify({'languages' : languages})
+    return jsonify({'languages': languages})
+
 
 @app.route('/test', methods=['POST'])
 def addOne():
-  
-  #data = json.loads('name')
-  #print data 
-  language = {"name" : request.json["name"]} 
-  languages.append(language)
-  return jsonify({"languages" : languages}) 
+    import pdb; pdb.set_trace()
+    language = {"name": request.json["name"]}
+    languages.append(language)
+    return jsonify({"languages": languages})
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=8000)
+    app.run(host='0.0.0.0', port=8000, debug=True)

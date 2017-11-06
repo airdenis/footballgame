@@ -22,9 +22,9 @@
 			        method: 'GET',
 			      	}).done(function(result) {
 			      		for(var j=0; j<result.length; j++){
-			      			$(".dropdown-menu").append("<button type=\"button\" class=\"dropdown-item\" id=" + 
-			      				result[j].id + " href=\"\"><img id=\"flag\" src=http:/"+"/localhost:8000/static/" + 
-			      				result[j].url + " class='flag wall img-responsive img-rounded' > " + 
+			      			$(".dropdown-menu").append("<button type=\"button\" class=\"dropdown-item\" id=" +
+			      				result[j].id + " href=\"\"><img id=\"flag\" src=http:/"+"/localhost:8000/static/" +
+			      				result[j].url + " class='flag wall img-responsive img-rounded' > " +
 			      				result[j].name + "</button>");
 
 								$("#" + result[j].id).on("click",(function(r){
@@ -45,7 +45,7 @@
 
 
 	var upper_tb_insert = "<div><h3>GAME SIMULATION</h3>"+
-		                "<div class=\"table-responsive col-md-3\"> "+        
+		                "<div class=\"table-responsive col-md-3\"> "+
 		                  "<table class=\"table mytable\"> "+
 		                    "<thead> "+
 		                      "<tr>"+
@@ -57,7 +57,7 @@
 		                      "</tr>"+
 		                    "</thead>"+
 		                    "<tbody id = \"tb_insert\">"+
-		                      
+
 		                    "</tbody>"+
 		                  "</table>"+
 		                  "<div id=\"play_button\">"+
@@ -77,8 +77,8 @@
 									"<h6>(Swiss Style)</h6>"+
 									"</div>"+
 									"<div class=\"row\" id=\"match_container\">"+
-					                "<div class=\"table-responsive col-md-3\"> "+ 
-					                	"<div class=\"row\">"+     
+					                "<div class=\"table-responsive col-md-3\"> "+
+					                	"<div class=\"row\">"+
 							                  "<table class=\"table table-responsive mytable\"> "+
 							                    "<thead> "+
 							                      "<tr>"+
@@ -113,7 +113,7 @@
 
 			rivals.push({"id" : ids.value , "country" : names.value , "chance" : Number(chance.value) , "points" : 0 , "url" : url.value});
 			match();
-			
+
 		}else{
 			var tb_insert = document.getElementById("tb_insert");
 			tb_insert.innerHTML+="<tr id=\""+"line"+ count +"\">"+
@@ -147,7 +147,7 @@
 			document.getElementById("play").disabled = true;
 			document.getElementById("play").innerHTML= "Simulation <spam><img src=http:/"+"/localhost:8000/static/images/x.svg class=\'flag wall img-responsive img-rounded\' width =\'16\'></img></spam>";
 		};
-		
+
 	};
 
 
@@ -165,12 +165,12 @@
 			if ($("#count"+n).next().next().text() == rivals[i].country){
 				$("#" + rivals[i].id).prop("disabled", false);
 				$("#" + rivals[i].id).css("background-color", "white");
-			}; 
+			};
 		};
 
 		rivals.splice(n-1,1);
 
-		
+
 
 		document.getElementById("line"+n).remove();
 
@@ -184,10 +184,10 @@
 				document.getElementById("post_contry").disabled = false;
 				$("#rivalsNrMsg").css({"color":"black","font-weight":"normal"});
 			};
-			
+
 		};
 
-		
+
 
 
 
@@ -234,8 +234,8 @@
 			};
 			rivals.sort(function(a, b){return b.points - a.points});
 
-			$("#match_container").append( "<div class=\"table-responsive col-md-3\" id=\"table"+n+"\"> "+ 
-												"<div><h4>Tour #  " + n + "</h4></div>" +  
+			$("#match_container").append( "<div class=\"table-responsive col-md-3\" id=\"table"+n+"\"> "+
+												"<div><h4>Tour #  " + n + "</h4></div>" +
 								                "<table class=\"table table-responsive mytable\"> "+
 								                    "<thead> "+
 								                      "<tr>"+
@@ -259,7 +259,7 @@
 						                  	"Update library</button>"+
 						                	"</div>");
 			};
-		
+
 			for(var k=0; k<rivals.length; k++){
 				$("#subMutch" + n).append("<tr class=\""+"line"+ count +"\">"+
 									"<td>"+Number(k+1)+"</td>"+
@@ -271,14 +271,14 @@
 			};
 		};
 
-	
+
 		$("#subMutch"+2+" .countryRow").each(function(index,element){
 			var couple = [];
 			couple.push(($(element).text()));
 			couple.push(($(element).next().text()));
 			champResults.push(couple);
 		});
-	
+
 
 
 		$(".removeBtn").prop("disabled",true);
@@ -300,6 +300,7 @@
 		$.ajax({
 			type: "POST",
 			url: "http://localhost:8000/test",
+            contentType: "application/json",
 			dataType : "json",
 			data: JSON.stringify({
 				name : "test1"
